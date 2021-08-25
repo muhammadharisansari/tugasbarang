@@ -4,6 +4,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class dash extends CI_Controller
 {
 
+    public function __construct()
+    {
+        parent::__construct(); {
+            if (!isset($this->session->userdata['id'])) {
+                $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">
+        Silahkan login terlebih dahulu.
+      </div>');
+                redirect('login');
+            }
+        }
+    }
+
     public function index()
     {
         $data['user']   = $this->login_model->nama($this->session->userdata['id'])->result();

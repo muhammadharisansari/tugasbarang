@@ -4,6 +4,9 @@
             login data barang!
         </div>
         <div class="card-body">
+
+            <?= $this->session->flashdata('pesan'); ?>
+
             <form action="login/cek" method="post">
                 <p>username :</p>
                 <input type="text" name="user" class="form-control">
