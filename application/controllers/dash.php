@@ -33,19 +33,8 @@ class dash extends CI_Controller
 
     public function tambah_aksi()
     {
-        $kategori   = $this->input->post('kategori');
-        $nama       = $this->input->post('nama');
-        $harga      = $this->input->post('harga');
-        // var_dump($kategori, $nama, $harga);
-        // die();
-
-        $data = array(
-            'kategori_id'   => $kategori,
-            'nama_barang'   => $nama,
-            'harga'         => $harga
-        );
-
-        $this->login_model->tambah($data, 'barang');
+        $push = $this->input->post();
+        $this->login_model->tambah($push, 'barang');
         $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">
         Berhasil menambah data !
       </div>');
@@ -62,9 +51,9 @@ class dash extends CI_Controller
 
     public function edit_aksi($id)
     {
-        $kategori  = $this->input->post('kategori');
-        $nama  = $this->input->post('nama');
-        $harga = $this->input->post('harga');
+        $kategori   = $this->input->post('kategori');
+        $nama       = $this->input->post('nama');
+        $harga      = $this->input->post('harga');
         // var_dump($kategori, $nama, $harga);
         // die();
 
