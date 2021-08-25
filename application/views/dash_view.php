@@ -3,7 +3,7 @@
         <div class="card mt-5 col-lg-10">
             <div class="card-header">
                 <?php foreach ($user as $u) : ?>
-                    Selamat datang <?= $u->username; ?>!
+                    Selamat datang, <?= $u->username; ?>!
                 <?php endforeach; ?>
             </div>
             <div class="card-body">
