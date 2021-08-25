@@ -25,11 +25,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($barang as $b) :
-                        $no = 1;
+                    <?php
+                    $no = 1;
+                    foreach ($barang as $b) :
                     ?>
                         <tr>
-                            <th scope="row"><?= $no++; ?></th>
+                            <td scope="row"><?= $no++; ?></td>
                             <td><?= $b->nama_barang; ?></td>
                             <td><?= $b->kategori; ?></td>
                             <td><?= $b->harga; ?></td>
